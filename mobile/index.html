@@ -45,7 +45,7 @@ margin: auto;
   <body>
     <div class="container">
       <h1 align="center">Art Works</h1>
-  		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+  		<div id="myCarousel" class="carousel slide" data-ride="carousel">
          <!-- Indicators -->
         <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -265,17 +265,19 @@ margin: auto;
       </div>
     </div>
     <script>
-      $("#myCarousel").swipe( {
-            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-
-                if(direction=='left'){
-                    $(this).carousel('next');
-                }else if(direction=='right'){
-                    $(this).carousel('prev');
+      function addSwipeTo(selector){
+            $(selector).swipe("destroy");
+            $(selector).swipe( {
+                swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                    if(direction=='left'){
+                        $(this).carousel('next');
+                    }else if(direction=='right'){
+                        $(this).carousel('prev');
+                    }
                 }
-
-            }
-        });
+            });
+}
+addSwipeTo("#myCarousel");
     </script>>
   </body>
 </html>
