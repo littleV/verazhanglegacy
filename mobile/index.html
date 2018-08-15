@@ -266,14 +266,7 @@ margin: auto;
       </div>
     </div>
     <script>  
-$(document).ready(function() {  
-   $("#myCarousel").swiperight(function() {  
-      $("#myCarousel").carousel('prev');  
-    });  
-   $("#myCarousel").swipeleft(function() {  
-      $("#myCarousel").carousel('next');  
-   });  
-});  
+$('.carousel').bcSwipe({ threshold: 50 });  
 </script>  
   </body>
 </html>
