@@ -264,5 +264,18 @@ margin: auto;
         </ul>  
       </div>
     </div>
+    <script>
+      $("#myCarousel").swipe( {
+            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+
+                if(direction=='left'){
+                    $(this).carousel('next');
+                }else if(direction=='right'){
+                    $(this).carousel('prev');
+                }
+
+            }
+        });
+    </script>>
   </body>
 </html>
