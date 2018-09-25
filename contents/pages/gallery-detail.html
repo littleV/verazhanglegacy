@@ -1,0 +1,47 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script>
+  function handleLoad(e) {
+    console.log('Loaded import: ' + e.target.href);
+  }
+  function handleError(e) {
+    console.log('Error loading import: ' + e.target.href);
+  }
+</script>
+<link rel="import" href="basic-import.html" onload="handleLoad(event)" onerror="handleError(event)">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+         
+          <a href="../images/art1.jpg"><img  src="../images/art1.jpg" alt="art1" style="width:100%" /></a>
+           <div class="caption">
+          <p>Color pencil on paper, 11"x16"</p>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="../images/art2.jpg"><img src="../images/art2.jpg" alt="art2" style="width:100%" /></a>
+            <div class="caption">
+          <p>Mixed materials on paper, 11"x16"</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="../images/art6.jpg"><img src="../images/art6.jpg" alt="art3" style="width:100%" /></a>
+        <div class="caption">
+          <p>Mixed materials on paper, 9.4"x11.6"</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
