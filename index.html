@@ -2,6 +2,19 @@
 <html lang="en">
   <head>
     <link rel="import" href="contents/pages/basic-import.html"> 
+    <script type="text/javascript">
+        function supportsImports() {
+  return 'import' in document.createElement('link');
+}
+
+if (supportsImports()) {
+  // Good to go!
+  console.log("supports import");
+} else {
+    console.log("does not support");
+  // Use other libraries/require systems to load files.
+}
+    </script>
   </head>
   <body>
 <header class="header">
