@@ -4,7 +4,6 @@
 </head>
 
 <body>
-  <div>test</div>
   <header class="header">
     <h1 style="text-align: center;">Art Works</h1>
   </header>
@@ -22,7 +21,8 @@
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                console.log(allText);
+                var json = JSON.parse(allText);
+                console.log(json);
             }
         }
     }
