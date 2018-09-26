@@ -10,28 +10,70 @@
   <main class="main container">
     <div id="content"></div>
     <script type="text/javascript">
-      function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                var json = JSON.parse(allText);
-                console.log(json);
-            }
+      function addImages(order, description, colunm){
+        var row = Math.floor(order.length / colunm);
+        for (var i = 0; i < row; i++) {
+          var divRow = document.createElement('div');
+          divRow.classList.add('row');
+          for (var j = 0 ; j < colunm; j++) {
+            var divColumn = document.createElement('div');
+            divColumn.classList.add('col-md-4');
+            var divThumbnail = document.createElement('div');
+            divThumbnail.classList.add('thumbnail');
+            var link = document.createElement('a');
+            link.href = "gallery-detail.html?" + order[i*colunm + j];
+            var img = document.createElement('img');
+            img.src = "../images/" + order[i*colunm + j];
+            link.appendChild(img);
+            divThumbnail.appendChild(link);
+            divColumn.appendChild(divThumbnail);
+            divRow.appendChild(divColumn);
+          }
+          document.getElementById('content').appendChild(divRow);              
         }
-    }
-    rawFile.onerror = function (e) {
-      console.error(xhr.statusText);
-    };
-    rawFile.send(null);
-}
-readTextFile("gallery-description");
+        var extra = order.length % colunm;
+        if (extra > 0) { 
+          var divRow = document.createElement('div');
+          divRow.classList.add('row');
+          for (var i = 0; i < extra; i++) {
+            var divColumn = document.createElement('div');
+            divColumn.classList.add('col-md-4');
+            var divThumbnail = document.createElement('div');
+            divThumbnail.classList.add('thumbnail');
+            var link = document.createElement('a');
+            link.href = "gallery-detail.html?" + order[row*colunm + i];
+            var img = document.createElement('img');
+            img.src = "../images/" + order[row*colunm + i];
+            link.appendChild(img);
+            divThumbnail.appendChild(link);
+            divColumn.appendChild(divThumbnail);
+            divRow.appendChild(divColumn);
+          }          
+          document.getElementById('content').appendChild(divRow);   
+        } 
+      }
+      function readTextFile(file)
+      {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function ()
+        {
+           if(rawFile.readyState === 4)
+           {
+              if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                  var allText = rawFile.responseText;
+                  var json = JSON.parse(allText);
+                  addImages(["art1.jpg", "art2.jpg", "art3.jpg", "art4.jpg","art5.jpg"], json, 3);
+                }
+            }
+          }
+          rawFile.onerror = function (e) {
+            console.error(xhr.statusText);
+          };
+          rawFile.send(null);
+      }
+      readTextFile("gallery-description-en");
     </script>
   </main>
   <footer class="footer">
