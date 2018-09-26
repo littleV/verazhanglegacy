@@ -8,7 +8,7 @@
     <meta name="author" content="Vera Zhang">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="../css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../css/custom.css" type="text/css" />
     <script src="../bootstrap/3.3.7/js/jquery.min.js"></script>
     <script src="../bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
@@ -26,7 +26,10 @@
     </script>
   </head>
   <body>
-  	<div class="container">
+    <header class="header">
+      <h1 align="center">Support Me</h1>
+    </header>
+  	<main class="main container">
       <div align="center" id="bitcoin">
       <h3 >My Bitcoin Address</h3>
       <p>3EMAc5f9tBep293m1E3RWH1YZLyx8UiDSr</p>
@@ -40,22 +43,79 @@
       <h3 >My Venmo Address</h3>
       <img width="300px" src="../images/venmo.jpg"></img>
       </div>
-      <div align="center" style="padding: 10px">
-        <ul class="list-inline">
-          <li><a class="black-link-underline" href="../../index.html">Home</a></li>
-           <li><a class="black-link-underline" href="about.html">About me</a></li>
-            <li><a class="black-link-underline" href="../blog/index.html">Blog</a></li>
-          <li><a id="insta_link" class="black-link-underline" href="http://www.instagram.com/vera_z/">Instagram</a></li>
-          <li><a class="black-link-underline" href="mailto:wei.vera.zhang@gmail.com?Subject=From%20www.verazhang.com">Email</a></li>
-        </ul>  
-      </div>
+    </main>
+    <footer class="footer">
+            <div id="footer-links" align="center"></div>
       <script type="text/javascript">
+        var ul = document.createElement('ul');
+        ul.className = "list-inline";
+        // Featured 
+        var featuredLi = document.createElement('li');
+        var featuredLink = document.createElement('a');
+        var featuredText = document.createTextNode("Featured");
+        featuredLink.appendChild(featuredText);
+        featuredLink.className = "black-link-underline";
+        featuredLink.href = "../../index.html";
+        featuredLi.appendChild(featuredLink);            
+        ul.appendChild(featuredLi);
+        // About me
+        var aboutMeLi = document.createElement('li');
+        var aboutMeLink = document.createElement('a');
+        var aboutMeText = document.createTextNode("About me");
+        aboutMeLink.appendChild(aboutMeText);
+        aboutMeLink.className = "black-link-underline";
+        aboutMeLink.href = "about.html";
+        aboutMeLi.appendChild(aboutMeLink);            
+        ul.appendChild(aboutMeLi);
+        // Art 
+        var artLi = document.createElement('li');
+        var artLink = document.createElement('a');
+        var artText = document.createTextNode("Art works");
+        artLink.appendChild(artText);
+        artLink.className = "black-link-underline";
+        artLink.href = "gallery.html";
+        artLi.appendChild(artLink);            
+        ul.appendChild(artLi);
+        // Blog 
+        var blogLi = document.createElement('li');
+        var blogLink = document.createElement('a');
+        var blogText = document.createTextNode("Blog");
+        blogLink.appendChild(blogText);
+        blogLink.className = "black-link-underline";
+        blogLink.href = "../contents/blog/index.html";
+        blogLi.appendChild(blogLink);            
+        ul.appendChild(blogLi);
+        // Instagram
         if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch){
-            document.getElementById('insta_link').href="instagram://user?username=vera_z";
+            var instaLi = document.createElement('li');
+            var instaLink = document.createElement('a');
+            var instaText = document.createTextNode("Instagram");
+            instaLink.appendChild(instaText);
+            instaLink.className = "black-link-underline";
+            instaLink.href = "instagram://user?username=vera_z";
+            instaLi.appendChild(instaLink);            
+            ul.appendChild(instaLi);
         } else {
-            document.getElementById('insta_link').href="http://www.instagram.com/vera_z/";
+            var instaLi = document.createElement('li');
+            var instaLink = document.createElement('a');
+            var instaText = document.createTextNode("Instagram");
+            instaLink.appendChild(instaText);
+            instaLink.className = "black-link-underline";
+            instaLink.href = "http://www.instagram.com/vera_z/";
+            instaLi.appendChild(instaLink);            
+            ul.appendChild(instaLi);
         }
+        // Email 
+        var emailLi = document.createElement('li');
+        var emailLink = document.createElement('a');
+        var emailText = document.createTextNode("Email");
+        emailLink.appendChild(emailText);
+        emailLink.className = "black-link-underline";
+        emailLink.href = "mailto:wei.vera.zhang@gmail.com?Subject=From%20www.verazhang.com";
+        emailLi.appendChild(emailLink);            
+        ul.appendChild(emailLi);
+        document.getElementById('footer-links').appendChild(ul);
       </script>
-    </div>
+    </footer>
   </body>
 </html>
