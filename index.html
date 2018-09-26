@@ -4,12 +4,95 @@
     <link rel="import" href="contents/pages/basic-import.html"> 
   </head>
   <body>
-    <script type="text/javascript">
+<header class="header">
+  <h1 style="text-align: center;">Featured</h1>
+</header>
+<main class="main container">
+  <div>
+    content
+  </div>
+</main>
+<footer class="footer">
+      <div id="footer-links" align="center"></div>
+      <script type="text/javascript">
+        var ul = document.createElement('ul');
+        ul.className = "list-inline";
+        // Featured
+        var featuredLi = document.createElement('li');
+        var featuredLink = document.createElement('a');
+        var featuredText = document.createTextNode("Featured");
+        featuredLink.appendChild(featuredText);
+        featuredLink.className = "black-link-underline";
+        featuredLink.href = "index.html";
+        featuredLi.appendChild(featuredLink);            
+        ul.appendChild(featuredLi);
+        // About me
+        var aboutMeLi = document.createElement('li');
+        var aboutMeLink = document.createElement('a');
+        var aboutMeText = document.createTextNode("About me");
+        aboutMeLink.appendChild(aboutMeText);
+        aboutMeLink.className = "black-link-underline";
+        aboutMeLink.href = "contents/pages/about.html";
+        aboutMeLi.appendChild(aboutMeLink);            
+        ul.appendChild(aboutMeLi);
+        // Art 
+        var artLi = document.createElement('li');
+        var artLink = document.createElement('a');
+        var artText = document.createTextNode("Art works");
+        artLink.appendChild(artText);
+        artLink.className = "black-link-underline";
+        artLink.href = "contents/pages/gallery.html";
+        artLi.appendChild(artLink);            
+        ul.appendChild(artLi);
+        // Blog 
+        var blogLi = document.createElement('li');
+        var blogLink = document.createElement('a');
+        var blogText = document.createTextNode("Blog");
+        blogLink.appendChild(blogText);
+        blogLink.className = "black-link-underline";
+        blogLink.href = "contents/blog/index.html";
+        blogLi.appendChild(blogLink);            
+        ul.appendChild(blogLi);
+        // Instagram
         if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch){
-            document.location = "mobile/index.html";
+            var instaLi = document.createElement('li');
+            var instaLink = document.createElement('a');
+            var instaText = document.createTextNode("Instagram");
+            instaLink.appendChild(instaText);
+            instaLink.className = "black-link-underline";
+            instaLink.href = "instagram://user?username=vera_z";
+            instaLi.appendChild(instaLink);            
+            ul.appendChild(instaLi);
         } else {
-            document.location = "desktop/index.html";
+            var instaLi = document.createElement('li');
+            var instaLink = document.createElement('a');
+            var instaText = document.createTextNode("Instagram");
+            instaLink.appendChild(instaText);
+            instaLink.className = "black-link-underline";
+            instaLink.href = "http://www.instagram.com/vera_z/";
+            instaLi.appendChild(instaLink);            
+            ul.appendChild(instaLi);
         }
+        // Email 
+        var emailLi = document.createElement('li');
+        var emailLink = document.createElement('a');
+        var emailText = document.createTextNode("Email");
+        emailLink.appendChild(emailText);
+        emailLink.className = "black-link-underline";
+        emailLink.href = "mailto:wei.vera.zhang@gmail.com?Subject=From%20www.verazhang.com";
+        emailLi.appendChild(emailLink);            
+        ul.appendChild(emailLi);
+        // Support 
+        var blogLi = document.createElement('li');
+        var blogLink = document.createElement('a');
+        var blogText = document.createTextNode("Blog");
+        blogLink.appendChild(blogText);
+        blogLink.className = "black-link-underline";
+        blogLink.href = "ontents/blog/index.html";
+        blogLi.appendChild(blogLink);            
+        ul.appendChild(blogLi);
+        document.getElementById('footer-links').appendChild(ul);
       </script>
+</footer>
   </body>
 </html>
