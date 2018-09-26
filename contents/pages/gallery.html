@@ -20,7 +20,7 @@
             var divThumbnail = document.createElement('div');
             divThumbnail.classList.add('thumbnail');
             var link = document.createElement('a');
-            link.href = "gallery-detail.html?" + order[i*colunm + j];
+            link.href = "gallery-detail.html?title=" + order[i*colunm + j];
             var img = document.createElement('img');
             img.src = "../images/" + order[i*colunm + j];
             link.appendChild(img);
@@ -40,7 +40,7 @@
             var divThumbnail = document.createElement('div');
             divThumbnail.classList.add('thumbnail');
             var link = document.createElement('a');
-            link.href = "gallery-detail.html?" + order[row*colunm + i];
+            link.href = "gallery-detail.html?title=" + order[row*colunm + i];
             var img = document.createElement('img');
             img.src = "../images/" + order[row*colunm + i];
             link.appendChild(img);
@@ -63,7 +63,9 @@
                 {
                   var allText = rawFile.responseText;
                   var json = JSON.parse(allText);
-                  addImages(["art1.jpg", "art2.jpg", "art3.jpg", "art4.jpg","art5.jpg"], json, 3);
+                  addImages(["art1.jpg", "art2.jpg", "art3.jpg", 
+                             "art4.jpg", "art5.jpg"],
+                              json, 3);
                 }
             }
           }
