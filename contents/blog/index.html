@@ -24,34 +24,35 @@
       </script>
   </head>
   <body>
-    <div class="container">
-     <div align="center">
-     	<h1>Blog</h1>
-     	<p><a class="black-link" href="2018/05/21/start.html">2018.05.21 开篇寄语</a></p>
-        <p><a class="black-link" href="2018/05/23/something-about-time.html">2018.05.21 关于时间的一点感悟</a></p>
-        <p><a class="black-link" href="guest/1.html">[Guest] Putting Your Best Self into Your 2018 Business Plan</a></p>
-        <p><a class="black-link" href="guest/2.html">[Guest] Hedging – What Is It, And It’s Uses In Risk Management</a></p>
-        <p><a class="black-link" href="guest/3.html">[Guest] Bitcoin and Its Bright Future in the World of Money</a></p>
-        <p><a class="black-link" href="guest/4.html">[Guest] A Brief Introduction About How to Buy Bitcoins As a Traded Currency These Days</a></p>
-        <p><a class="black-link" href="guest/5.html">[Guest] 5 Reseaons Why You Will Love The Golden Triangle Tour</a></p>
-        <p><a class="black-link" href="guest/6.html">[Guest] Why are online bill payments beneficial?</a></p>
-     </div>
-      <div style="padding: 10px" align="center">
+    <header class="header">
+      <h1 align="center">Vera's Blog</h1>
+    </header>
+    <main class="main container">
+      <div class="outer">
+        <div class="inner" style="padding-top: 20px;" align="center">
+          <p><a class="black-link" href="2018/05/21/start.html">2018.05.21 开篇寄语</a></p>
+          <p><a class="black-link" href="2018/05/23/something-about-time.html">2018.05.21 关于时间的一点感悟</a></p>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div align="center">
         <ul class="list-inline">
-          <li><a class="black-link-underline" href="../../index.html">Home</a></li>
+          <li><a class="black-link-underline" href="../../index.html">Featured</a></li>
+          <li><a class="black-link-underline" href="../pages/gallery.html">Art works</a></li>
           <li><a class="black-link-underline" href="../pages/about.html">About me</a></li>
-          <li><a class="black-link-underline" id="insta_link" href="instagram://user?username=vera_z">Instagram</a></li>
+          <li><a id="insta_link" class="black-link-underline" href="http://www.instagram.com/vera_z/">Instagram</a></li>
           <li><a class="black-link-underline" href="mailto:wei.vera.zhang@gmail.com?Subject=From%20www.verazhang.com">Email</a></li>
           <li><a class="black-link-underline" href="../pages/support.html">Support me</a></li>
-        </ul>
-             <script type="text/javascript">
-                if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch){
+        </ul>  
+      </div>
+      <script type="text/javascript">
+        if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch){
             document.getElementById('insta_link').href="instagram://user?username=vera_z";
         } else {
             document.getElementById('insta_link').href="http://www.instagram.com/vera_z/";
         }
       </script>
-      </div>
-    </div>
+    </footer>
   </body>
 </html>

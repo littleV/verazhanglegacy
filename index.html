@@ -141,76 +141,22 @@
         </script>
     </main>
     <footer class="footer">
-      <div id="footer-links" align="center"></div>
+      <div align="center">
+        <ul class="list-inline">
+          <li><a class="black-link-underline" href="contents/pages/gallery.html">Art works</a></li>
+          <li><a class="black-link-underline" href="contents/blog/index.html">Blog</a></li>
+          <li><a class="black-link-underline" href="contents/pages/about.html">About me</a></li>
+          <li><a id="insta_link" class="black-link-underline" href="http://www.instagram.com/vera_z/">Instagram</a></li>
+          <li><a class="black-link-underline" href="mailto:wei.vera.zhang@gmail.com?Subject=From%20www.verazhang.com">Email</a></li>
+          <li><a class="black-link-underline" href="contents/pages/support.html">Support me</a></li>
+        </ul>  
+      </div>
       <script type="text/javascript">
-        var ul = document.createElement('ul');
-        ul.className = "list-inline";
-        // About me
-        var aboutMeLi = document.createElement('li');
-        var aboutMeLink = document.createElement('a');
-        var aboutMeText = document.createTextNode("About me");
-        aboutMeLink.appendChild(aboutMeText);
-        aboutMeLink.className = "black-link-underline";
-        aboutMeLink.href = "contents/pages/about.html";
-        aboutMeLi.appendChild(aboutMeLink);            
-        ul.appendChild(aboutMeLi);
-        // Art 
-        var artLi = document.createElement('li');
-        var artLink = document.createElement('a');
-        var artText = document.createTextNode("Art works");
-        artLink.appendChild(artText);
-        artLink.className = "black-link-underline";
-        artLink.href = "contents/pages/gallery.html";
-        artLi.appendChild(artLink);            
-        ul.appendChild(artLi);
-        // Blog 
-        var blogLi = document.createElement('li');
-        var blogLink = document.createElement('a');
-        var blogText = document.createTextNode("Blog");
-        blogLink.appendChild(blogText);
-        blogLink.className = "black-link-underline";
-        blogLink.href = "contents/blog/index.html";
-        blogLi.appendChild(blogLink);            
-        ul.appendChild(blogLi);
-        // Instagram
         if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch){
-            var instaLi = document.createElement('li');
-            var instaLink = document.createElement('a');
-            var instaText = document.createTextNode("Instagram");
-            instaLink.appendChild(instaText);
-            instaLink.className = "black-link-underline";
-            instaLink.href = "instagram://user?username=vera_z";
-            instaLi.appendChild(instaLink);            
-            ul.appendChild(instaLi);
+            document.getElementById('insta_link').href="instagram://user?username=vera_z";
         } else {
-            var instaLi = document.createElement('li');
-            var instaLink = document.createElement('a');
-            var instaText = document.createTextNode("Instagram");
-            instaLink.appendChild(instaText);
-            instaLink.className = "black-link-underline";
-            instaLink.href = "http://www.instagram.com/vera_z/";
-            instaLi.appendChild(instaLink);            
-            ul.appendChild(instaLi);
+            document.getElementById('insta_link').href="http://www.instagram.com/vera_z/";
         }
-        // Email 
-        var emailLi = document.createElement('li');
-        var emailLink = document.createElement('a');
-        var emailText = document.createTextNode("Email");
-        emailLink.appendChild(emailText);
-        emailLink.className = "black-link-underline";
-        emailLink.href = "mailto:wei.vera.zhang@gmail.com?Subject=From%20www.verazhang.com";
-        emailLi.appendChild(emailLink);            
-        ul.appendChild(emailLi);
-        // Support 
-        var supportLi = document.createElement('li');
-        var supportLink = document.createElement('a');
-        var supportText = document.createTextNode("Support me");
-        supportLink.appendChild(supportText);
-        supportLink.className = "black-link-underline";
-        supportLink.href = "contents/pages/support.html";
-        supportLi.appendChild(supportLink);            
-        ul.appendChild(supportLi);
-        document.getElementById('footer-links').appendChild(ul);
       </script>
     </footer>
   </body>

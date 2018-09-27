@@ -23,6 +23,17 @@
   z-index: 99 !important;
 }
 
+.outer {
+  height: calc(100vh - 140px) !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.inner {
+  flex: 1;
+  overflow-y: scroll;
+}
+
 .footer {
    position: fixed;
     left: 0;
