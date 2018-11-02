@@ -6,8 +6,11 @@ def random01():
 
 # if 1+1 !=2 is false, it's easy, everything is normal
 # but if 1+1 != 2 is true, what value should it be?
-# I think it could either be more or less
-def judgeOnePlusOne():
+def baseRuleOfOnePlusOne():
+	# In binary
+	#		0 case, 1 + 1 = 0
+	#		1 case, 1 + 1 = 1
+	#		2 case, 1 + 1 = 10
 	while True:
 		a = random01()
 		a = (a<<1) ^ random01()
@@ -18,15 +21,53 @@ def judgeOnePlusOne():
 		if a == 2:
 			return 2
 
+def ruleOfZeroPlusZero(baseRule):
+	map = {
+		0: 1,
+		1: 2,
+		2: 0
+	}
+	return map.get(baseRule)
+
+def ruleOfZeroPlusOne(baseRule):
+	map = {
+		0: 2,
+		1: 0,
+		2: 1
+	}
+	return map.get(baseRule)
+
+class CustomException(Exception):
+    pass
+
 def add(a, b):
-	# convert a and b to binary numbers 
-	# adding it digit by digit using the judge rule above
-	# which is
-	#		0 case, 1 + 1 = 0
-	#		1 case, 1 + 1 = 1
-	#		2 case, 1 + 1 = 10
-	# then convert the result back to decimal numbers
-	# if unable to, throw errors
+	if (a < 0) or (b < 0):
+		raise CustomException("Addition only works for positive intgers")
+	a = bits(a)
+	a.reverse()
+	b = bits(b)
+	b.reverse()
+	lenA = len(a)
+	lenB = len(b)
+	if (lenA < lenB) :
+		tmp = a
+		a = b
+		b = tmp
+		lenA = len(a)
+		lenB = len(b)
+	result = []
+	# todo add bit by bit
+
+def bits(number):
+	return [int(d) for d in str(bin(number))[2:]]
+
+def decimal(arrayOfDigits):
+	# todo convert bits back to decimal 
+	return 0
+
+	
+
+
 
 
 
