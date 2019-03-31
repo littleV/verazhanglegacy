@@ -26,8 +26,36 @@
       </script>
    </head>
    <body>
+    <div id ="content"></div>
       <script type="text/javascript">
-        window.location = "../"
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var number = getRandomInt(0,4);
+        switch(number){
+          case 0:
+            window.location.href = "../";
+            break;
+          case 1:
+            window.location.href = "../gallery/detail.html?title=art32.jpg";
+            break;
+          case 2:
+            window.location.href = "../gallery/detail.html?title=art40.jpg";
+            break;
+          case 3:
+            window.location.href = "../gallery/detail.html?title=art28.jpg";
+            break;
+          case 4:
+            window.location.href = "../gallery/detail.html?title=art13.jpg";
+            break;
+          default:
+            window.location.href = "../";
+            break;
+        }
+
+        
       </script>
    </body>
 </html>
