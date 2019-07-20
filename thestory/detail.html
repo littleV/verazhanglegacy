@@ -55,7 +55,7 @@
                    document.getElementById('imgHolder').appendChild(img);
                    var language = localStorage.getItem('verazhang.com?language=');
                    if (language == '中文') {
-                    readTextFile("description-ch", function(param) {
+                    readTextFile("otherSupports/description-ch", function(param) {
                       var json = JSON.parse(param);
                       var detail = json[key];
                       var h4 = document.createElement('h4');
@@ -76,7 +76,7 @@
                       document.getElementById('detailHolder').appendChild(descriptionP);
                     });                      
                    } else {
-                    readTextFile("description-en", function(param) {
+                    readTextFile("otherSupports/description-en", function(param) {
                         var json = JSON.parse(param);
                         var detail = json[key];
                         var h4 = document.createElement('h4');
