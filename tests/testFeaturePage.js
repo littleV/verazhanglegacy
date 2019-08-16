@@ -1,56 +1,61 @@
 import { Selector } from 'testcafe';
 import { Utils } from './util.js'
 fixture `Feature Page Tests`
-	.page("http://0.0.0.0:8000/")
+	.page(Utils.baseUrl)
 
 // Footer links
 test('Gallery link', async t => {
     const galleryLink = Selector('#footer-links').child(0).child(1);
 
     await t.click(galleryLink)
-    		.expect(Utils.getLocation()).contains("/gallery");
+    		.expect(Utils.getLocation()).contains(Utils.galleryPath + "/");
 });
 
 test('Blog link', async t => {
     const blogLink = Selector('#footer-links').child(0).child(2);
 
     await t.click(blogLink)
-    		.expect(Utils.getLocation()).contains("/blog");
+    		.expect(Utils.getLocation()).contains(Utils.blogPath + "/");
 });
 
 test('About link', async t => {
     const aboutLink = Selector('#footer-links').child(0).child(3);
 
     await t.click(aboutLink)
-    		.expect(Utils.getLocation()).contains("/about");
+    		.expect(Utils.getLocation()).contains(Utils.aboutPath + "/");
 });
 
 test('Instagram link', async t => {
     const supportLink = Selector('#footer-links').child(0).child(4);
 
     await t.click(supportLink)
-    		.expect(Utils.getLocation()).contains("www.instagram.com/vera_z/");
+    		.expect(Utils.getLocation()).contains(Utils.instaWebPath);
+});
+
+test('Email link', async t => {
+    const emailLink = Selector('#footer-links').child(0).child(5).child(0);
+    await t.expect(emailLink.getAttribute('href')).contains(Utils.emailPath);
 });
 
 test('Support link', async t => {
     const supportLink = Selector('#footer-links').child(0).child(6);
 
     await t.click(supportLink)
-    		.expect(Utils.getLocation()).contains("/support");
+    		.expect(Utils.getLocation()).contains(Utils.supportPath + "/");
 });
 
 test('Ads link', async t => {
     const adsLink = Selector('#footer-links').child(0).child(7);
 
     await t.click(adsLink)
-    		.expect(Utils.getLocation()).contains("/ads");
+    		.expect(Utils.getLocation()).contains(Utils.adsPath + "/");
 });
 
 test('Privacy link', async t => {
     const privacyLink = Selector('#footer-links').child(0).child(8);
 
     await t.click(privacyLink)
-    		.expect(Utils.getLocation()).contains("https://www.freeprivacypolicy.com/privacy/view/fc6bd4104410e9573eead5ce0a7f1b3e");
+    		.expect(Utils.getLocation()).contains(Utils.privacyPath);
 });
 
 // Main slider
