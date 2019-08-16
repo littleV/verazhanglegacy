@@ -1,65 +1,60 @@
 import { Selector } from 'testcafe';
-import { ClientFunction } from 'testcafe';
-
+import { Utils } from './util.js'
 fixture `Feature Page Tests`
 	.page("http://0.0.0.0:8000/")
 
-
-const getLocation = ClientFunction(() => document.location.href.toString());
-const goBack = ClientFunction(() => window.history.back());
-
 // Footer links
-test('Fearture page gallery link', async t => {
+test('Gallery link', async t => {
     const galleryLink = Selector('#footer-links').child(0).child(1);
 
     await t.click(galleryLink)
-    		.expect(getLocation()).contains("/gallery");
+    		.expect(Utils.getLocation()).contains("/gallery");
 });
 
-test('Fearture page blog link', async t => {
+test('Blog link', async t => {
     const blogLink = Selector('#footer-links').child(0).child(2);
 
     await t.click(blogLink)
-    		.expect(getLocation()).contains("/blog");
+    		.expect(Utils.getLocation()).contains("/blog");
 });
 
-test('Fearture page about link', async t => {
+test('About link', async t => {
     const aboutLink = Selector('#footer-links').child(0).child(3);
 
     await t.click(aboutLink)
-    		.expect(getLocation()).contains("/about");
+    		.expect(Utils.getLocation()).contains("/about");
 });
 
-test('Fearture page instagram link', async t => {
+test('Instagram link', async t => {
     const supportLink = Selector('#footer-links').child(0).child(4);
 
     await t.click(supportLink)
-    		.expect(getLocation()).contains("www.instagram.com/vera_z/");
+    		.expect(Utils.getLocation()).contains("www.instagram.com/vera_z/");
 });
 
-test('Fearture page support link', async t => {
+test('Support link', async t => {
     const supportLink = Selector('#footer-links').child(0).child(6);
 
     await t.click(supportLink)
-    		.expect(getLocation()).contains("/support");
+    		.expect(Utils.getLocation()).contains("/support");
 });
 
-test('Fearture page ads link', async t => {
+test('Ads link', async t => {
     const adsLink = Selector('#footer-links').child(0).child(7);
 
     await t.click(adsLink)
-    		.expect(getLocation()).contains("/ads");
+    		.expect(Utils.getLocation()).contains("/ads");
 });
 
-test('Fearture page privacy link', async t => {
+test('Privacy link', async t => {
     const privacyLink = Selector('#footer-links').child(0).child(8);
 
     await t.click(privacyLink)
-    		.expect(getLocation()).contains("https://www.freeprivacypolicy.com/privacy/view/fc6bd4104410e9573eead5ce0a7f1b3e");
+    		.expect(Utils.getLocation()).contains("https://www.freeprivacypolicy.com/privacy/view/fc6bd4104410e9573eead5ce0a7f1b3e");
 });
 
 // Main slider
-test('Feature page right and left arrows', async t=>{
+test('Right and left arrows', async t=>{
 	var activeItem = Selector('.active');
 	var currentImageUrl = await activeItem.child(0).child(0).getAttribute('src');
 	await t.expect(currentImageUrl).contains('gallery/images/art33.jpg');
@@ -150,55 +145,55 @@ test('Feature page right and left arrows', async t=>{
 
 });
 
-test('Feature page click to details', async t=>{
+test('Click to details', async t=>{
 	const currentImage = Selector('.active').child(0).child(0);
     await t.click(currentImage)
-			.expect(getLocation()).contains("gallery/detail.html?title=art33.jpg");
-	await goBack();
+			.expect(Utils.getLocation()).contains("gallery/detail.html?title=art33.jpg");
+	await Utils.goBack();
 	const right = Selector('.right');
 	await t.click(right).wait(1000);
 	await t.click(currentImage)
-			.expect(getLocation()).contains("gallery/detail.html?title=art34.jpg");
-	await goBack();
+			.expect(Utils.getLocation()).contains("gallery/detail.html?title=art34.jpg");
+	await Utils.goBack();
 	for(let i = 0; i < 2; i++) {
     	await t
 	        .click(right)
 	        .wait(1000)
 	}
 	await t.click(currentImage)
-			.expect(getLocation()).contains("gallery/detail.html?title=art35.jpg");
-	await goBack();
+			.expect(Utils.getLocation()).contains("gallery/detail.html?title=art35.jpg");
+	await Utils.goBack();
 	for(let i = 0; i < 3; i++) {
     	await t
 	        .click(right)
 	        .wait(1000)
 	}
 	await t.click(currentImage)
-			.expect(getLocation()).contains("gallery/detail.html?title=art36.jpg");
-	await goBack();
+			.expect(Utils.getLocation()).contains("gallery/detail.html?title=art36.jpg");
+	await Utils.goBack();
 	for(let i = 0; i < 4; i++) {
     	await t
 	        .click(right)
 	        .wait(1000)
 	}
 	await t.click(currentImage)
-			.expect(getLocation()).contains("gallery/detail.html?title=art37.jpg");
-	await goBack();
+			.expect(Utils.getLocation()).contains("gallery/detail.html?title=art37.jpg");
+	await Utils.goBack();
 	for(let i = 0; i < 5; i++) {
     	await t
 	        .click(right)
 	        .wait(1000)
 	}
 	await t.click(currentImage)
-			.expect(getLocation()).contains("gallery/detail.html?title=art41.jpg");
-	await goBack();
+			.expect(Utils.getLocation()).contains("gallery/detail.html?title=art41.jpg");
+	await Utils.goBack();
 	for(let i = 0; i < 6; i++) {
     	await t
 	        .click(right)
 	        .wait(1000)
 	}
 	await t.click(currentImage)
-			.expect(getLocation()).contains("gallery/detail.html?title=art42.jpg");
+			.expect(Utils.getLocation()).contains("gallery/detail.html?title=art42.jpg");
 });
 
 
