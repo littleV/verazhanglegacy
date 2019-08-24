@@ -334,5 +334,12 @@
     "description": "I just had the idea of paiting with my hands, and this came out.",
     "width": "16",
     "height": "20"
+  }, 
+    "art49.jpg": {
+    "title": "The window",
+    "material": "Acrylic on canvas",
+    "description": "When I was a child, I was always locked at home since my parents were busy working. My only contact of the outside world was through the big window in the apartments' kitchen.",
+    "width": "24",
+    "height": "30"
   }
 }

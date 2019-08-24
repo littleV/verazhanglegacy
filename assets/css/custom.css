@@ -58,7 +58,11 @@
     z-index: 999 !important;
 }
 
-.gallery-p-center {
+.gallery-p-center-bold {
   text-align: center;
   font-weight: bold;
+} 
+
+.gallery-p-center {
+  text-align: center;
 } 
