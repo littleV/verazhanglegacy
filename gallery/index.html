@@ -70,6 +70,10 @@
                   p.appendChild(pText);
                   divCaption.appendChild(p);
                   divThumbnail.appendChild(divCaption);
+                  var pStatus = document.createElement("p");
+                  var textStatus = document.createTextNode(details['status']);
+                  pStatus.appendChild(textStatus);
+                  divThumbnail.appendChild(pStatus);
                   divColumn.appendChild(divThumbnail);
                   divRow.appendChild(divColumn);
                 }
@@ -103,7 +107,12 @@
                   p.appendChild(pText);
                   divCaption.appendChild(p);
                   divThumbnail.appendChild(divCaption);
+                  var pStatus = document.createElement("p");
+                  var textStatus = document.createTextNode(details['status']);
+                  pStatus.appendChild(textStatus);
+                  divThumbnail.appendChild(pStatus);
                   divColumn.appendChild(divThumbnail);
+                  
                   divRow.appendChild(divColumn);
                 }          
                 document.getElementById(contentHolderId).appendChild(divRow);   
@@ -124,20 +133,20 @@
               document.getElementById('content').appendChild(p2019);
               var pWindow = document.createElement('p');
               pWindow.classList.add("gallery-p-center");
-              var textWindow = document.createTextNode("Window Project");
+              var textWindow = document.createTextNode("The Window 窗外");
               pWindow.appendChild(textWindow);
               document.getElementById('content').appendChild(pWindow);
               addImages('content', ["art49.jpg"], json, 3);
               var pPhilosophy = document.createElement('p');
               pPhilosophy.classList.add("gallery-p-center");
-              var textPhilosophy = document.createTextNode("Philosophy Project");
+              var textPhilosophy = document.createTextNode("Philosophy 哲");
               pPhilosophy.appendChild(textPhilosophy);
               document.getElementById('content').appendChild(pPhilosophy);
               addImages('content', ["art43.jpg","art44.jpg","art45.jpg"],
                           json, 3);
               var pHue = document.createElement('p');
               pHue.classList.add("gallery-p-center");
-              var textHue = document.createTextNode("Hue Project");
+              var textHue = document.createTextNode("Hue 色调");
               pHue.appendChild(textHue);
               document.getElementById('content').appendChild(pHue);
               addImages('content', ["art33.jpg", "art34.jpg", "art35.jpg","art36.jpg", "art37.jpg", "art41.jpg", "art42.jpg"], json, 3);
@@ -151,13 +160,19 @@
               divMoreFor2019.className = "collapse";
               divMoreFor2019.id = "moreWorksFor2019";
               document.getElementById('content').appendChild(divMoreFor2019);
-              addImages('moreWorksFor2019', ["art38.jpg","art39.jpg", "art40.jpg"], json, 3);
-              // addImages('content', ["art38.jpg", "art39.jpg", "art40.jpg"], json, 3);
-              // var p2018 = document.createElement('p');
-              // p2018.classList.add("gallery-p-center-bold");
-              // var text2018 = document.createTextNode("2018");
-              // p2018.appendChild(text2018);
-              // document.getElementById('content').appendChild(p2018);
+              addImages('moreWorksFor2019', ["art52.jpg","art51.jpg","art50.jpg","art38.jpg","art39.jpg", "art40.jpg"], json, 3);
+              var p2018 = document.createElement('p');
+              p2018.classList.add("gallery-p-center-bold");
+              var text2018 = document.createTextNode("2018");
+              p2018.appendChild(text2018);
+              document.getElementById('content').appendChild(p2018);
+              var pPainting = document.createElement('p');
+              pPainting.classList.add("gallery-p-center");
+              var textPainting = document.createTextNode("Who's in the painting?");
+              pPainting.appendChild(textPainting);
+              document.getElementById('content').appendChild(pPainting);
+              addImages('content', ["art32.jpg"],
+                      json, 3);
               // addImages('content', ["art32.jpg",  "art28.jpg", "art31.jpg", 
               //   "art30.jpg",  "art19.jpg","art21.jpg", 
               //    "art27.jpg", "art24.jpg", "art25.jpg", 
