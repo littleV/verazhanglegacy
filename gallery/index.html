@@ -160,7 +160,7 @@
               divMoreFor2019.className = "collapse";
               divMoreFor2019.id = "moreWorksFor2019";
               document.getElementById('content').appendChild(divMoreFor2019);
-              addImages('moreWorksFor2019', ["art52.jpg","art51.jpg","art50.jpg","art38.jpg","art39.jpg", "art40.jpg"], json, 3);
+              addImages('moreWorksFor2019', ["art58.jpg","art57.jpg","art56.jpg","art55.jpg","art54.jpg","art53.jpg","art52.jpg","art51.jpg","art50.jpg","art38.jpg","art39.jpg", "art40.jpg"], json, 3);
               var p2018 = document.createElement('p');
               p2018.classList.add("gallery-p-center-bold");
               var text2018 = document.createTextNode("2018");
@@ -168,36 +168,71 @@
               document.getElementById('content').appendChild(p2018);
               var pPainting = document.createElement('p');
               pPainting.classList.add("gallery-p-center");
-              var textPainting = document.createTextNode("Who's in the painting?");
+              var textPainting = document.createTextNode("Who's in the painting? 谁在画里？");
               pPainting.appendChild(textPainting);
               document.getElementById('content').appendChild(pPainting);
               addImages('content', ["art32.jpg"],
                       json, 3);
-              // addImages('content', ["art32.jpg",  "art28.jpg", "art31.jpg", 
-              //   "art30.jpg",  "art19.jpg","art21.jpg", 
-              //    "art27.jpg", "art24.jpg", "art25.jpg", 
-              //    "art26.jpg", "art23.jpg", "art18.jpg", 
-              //    "art22.jpg", "art17.jpg", "art20.jpg",  
-              //        "art16.jpg", "art15.jpg","art14.jpg",
-              //        "art1.jpg", "art2.jpg", "art3.jpg", 
-              //        "art4.jpg", "art5.jpg"],
-              //         json, 3);
-              // var p2017 = document.createElement('p');
-              // p2017.classList.add("gallery-p-center-bold");
-              // var text2017 = document.createTextNode("2017");
-              // p2017.appendChild(text2017);
-              // document.getElementById('content').appendChild(p2017);
-              // addImages('content', [
-              //      "art8.jpg", "art7.jpg",  "art6.jpg","art12.jpg", "art13.jpg"],
-              //       json, 3);
-              // var p2016 = document.createElement('p');
-              // p2016.classList.add("gallery-p-center-bold");
-              // var text2016 = document.createTextNode("2016");
-              // p2016.appendChild(text2016);
-              // document.getElementById('content').appendChild(p2016);
-              // addImages('content', [
-              //       "art10.jpg","art9.jpg"],
-              //       json, 3);
+               var pKiss = document.createElement('p');
+              pKiss.classList.add("gallery-p-center");
+              var textKiss = document.createTextNode("A kiss. 吻");
+              pKiss.appendChild(textKiss);
+              document.getElementById('content').appendChild(pKiss);
+              addImages('content', ["art30.jpg"],
+                      json, 3);
+               var pSelfie = document.createElement('p');
+              pSelfie.classList.add("gallery-p-center");
+              var textSelfie = document.createTextNode("Self Portrait. 自画像");
+              pSelfie.appendChild(textSelfie);
+              document.getElementById('content').appendChild(pSelfie);
+              addImages('content', ["art1.jpg"],
+                      json, 3);
+              var linkMoreFor2018 = document.createElement('a');
+              var textMoreFor2018 = document.createTextNode("More works for 2018");
+              linkMoreFor2018.appendChild(textMoreFor2018);
+              linkMoreFor2018.href = "#moreWorksFor2018";
+              linkMoreFor2018.setAttribute('data-toggle', 'collapse');
+              document.getElementById("content").appendChild(linkMoreFor2018);
+              var divMoreFor2018 = document.createElement("div");
+              divMoreFor2018.className = "collapse";
+              divMoreFor2018.id = "moreWorksFor2018";
+              document.getElementById('content').appendChild(divMoreFor2018);
+              addImages('moreWorksFor2018', [ "art28.jpg", "art31.jpg", 
+                "art19.jpg","art21.jpg", 
+                 "art27.jpg", "art24.jpg", "art25.jpg", 
+                 "art26.jpg", "art23.jpg", "art18.jpg", 
+                 "art22.jpg", "art17.jpg", "art20.jpg",  
+                     "art16.jpg", "art15.jpg","art14.jpg",
+                     "art2.jpg", "art3.jpg", 
+                     "art4.jpg", "art5.jpg"],
+                      json, 3);
+              document.getElementById("content").appendChild(document.createElement('div'));
+              var linkMoreFor2017 = document.createElement('a');
+              var textMoreFor2017 = document.createTextNode("Works for 2017");
+              linkMoreFor2017.appendChild(textMoreFor2017);
+              linkMoreFor2017.href = "#moreWorksFor2017";
+              linkMoreFor2017.setAttribute('data-toggle', 'collapse');
+              document.getElementById("content").appendChild(linkMoreFor2017);
+              var divMoreFor2017 = document.createElement("div");
+              divMoreFor2017.className = "collapse";
+              divMoreFor2017.id = "moreWorksFor2017";
+              document.getElementById('content').appendChild(divMoreFor2017);
+              addImages('moreWorksFor2017', [
+                   "art8.jpg", "art7.jpg",  "art6.jpg","art12.jpg", "art13.jpg"],
+                    json, 3);
+              document.getElementById("content").appendChild(document.createElement('div'));
+              var linkMoreFor2016 = document.createElement('a');
+              var textMoreFor2016 = document.createTextNode("Works for 2016");
+              linkMoreFor2016.appendChild(textMoreFor2016);
+              linkMoreFor2016.href = "#moreWorksFor2016";
+              linkMoreFor2016.setAttribute('data-toggle', 'collapse');
+              document.getElementById("content").appendChild(linkMoreFor2016);
+              var divMoreFor2016 = document.createElement("div");
+              divMoreFor2016.className = "collapse";
+              divMoreFor2016.id = "moreWorksFor2016";
+              document.getElementById('content').appendChild(divMoreFor2016);
+              addImages('moreWorksFor2016', ["art10.jpg","art9.jpg"],
+                    json, 3);
             });
 
          </script>
