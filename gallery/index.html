@@ -36,11 +36,11 @@
       </header>
       <main class="main container">
          <div class="outer">
-          <br/>
             <div class="inner" id="content" align="center">
             </div>
          </div>
          <script type="text/javascript">
+          var language = localStorage.getItem('verazhang.com?language=');
             function addImages(contentHolderId, order, description, colunm){
               var row = Math.floor(order.length / colunm);
               for (var i = 0; i < row; i++) {
